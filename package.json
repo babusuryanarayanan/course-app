@@ -47,7 +47,9 @@
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
   },
-  "czConfig" : {
+  "config" : {
+    "commitizen" : {
       "path" : "node_modules/cz-conventional-changelog"
+    }
   }
 }
