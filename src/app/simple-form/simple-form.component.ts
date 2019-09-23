@@ -12,6 +12,7 @@ export class SimpleFormComponent implements OnInit {
 
   show:boolean = false;
   isMousedown;
+  cssClasses = {'bold':true, 'highlight':true, 'strike':true};
 
   @Input() orderInput;
 

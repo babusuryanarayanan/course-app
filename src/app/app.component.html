@@ -1,8 +1,11 @@
-
-<hr>
-<ul>
-  <li *ngFor = "let order of orderService.orders"> {{order.text}} </li>
-  </ul>
+<div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Order List
+      </div>
+      <ul class="list-group list-group-flush">
+        <li *ngFor = "let order of orderService.orders" class="list-group-item"> {{order.text}} </li>
+      </ul>
+  </div>
 <hr>
 
 <app-simple-form *ngFor = "let order of orderService.orders" 

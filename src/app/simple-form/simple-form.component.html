@@ -2,7 +2,7 @@
 
 
     <input type="checkbox" (change)="onCheck($event)">
-    <span>
+    <span [ngClass]="cssClasses">
     {{orderInput}} </span>
     <input #myInput type="text" 
     [(ngModel)]="orderInput"
