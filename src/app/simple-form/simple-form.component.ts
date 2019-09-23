@@ -12,6 +12,7 @@ export class SimpleFormComponent implements OnInit {
 
   @Input() orderInput;
   show:boolean = false;
+  cssClasses = {'bold':true,'highlight':true,'strike':false};
 
   @Output() updateVal = new EventEmitter();
 
@@ -21,6 +22,10 @@ export class SimpleFormComponent implements OnInit {
   onClick(event, value) {
     console.log(event, value);
     this.updateVal.emit({text:value});
+  }
+
+  onCheck(event) {
+    this.show = event.target.checked;
   }
 
 }
