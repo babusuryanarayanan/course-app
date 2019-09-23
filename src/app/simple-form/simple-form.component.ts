@@ -11,6 +11,7 @@ export class SimpleFormComponent implements OnInit {
   constructor() { }
 
   @Input() orderInput;
+  show:boolean = false;
 
   @Output() updateVal = new EventEmitter();
 
