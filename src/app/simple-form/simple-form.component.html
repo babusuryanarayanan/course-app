@@ -1,6 +1,20 @@
-<div>
-    {{orderInput}}
 
-    <input #myInput type="text">
-    <button (click)="onClick($event, myInput.value)"> Click Me! </button>
+
+
+    <input type="checkbox" (change)="onCheck($event)">
+    <span>
+    {{orderInput}} </span>
+    <input #myInput type="text" 
+    [(ngModel)]="orderInput"
+    [ngClass]="{mousedown:isMousedown}"
+    (mousedown)="isMousedown=true" (mouseup)="isMousedown=false">
+    <button (click)="onClick($event, myInput.value)" class="btn-primary"> Click Me! </button>
+    
+
+    <div *ngIf="show; else onFalse"> 
+            Content to be rendered when the condition is true
     </div>
+
+    <ng-template #onFalse>
+                Nothing to render
+        </ng-template>

@@ -10,6 +10,9 @@ export class SimpleFormComponent implements OnInit {
 
   constructor() { }
 
+  show:boolean = false;
+  isMousedown;
+
   @Input() orderInput;
 
   @Output() updateVal = new EventEmitter();
@@ -20,6 +23,12 @@ export class SimpleFormComponent implements OnInit {
   onClick(event, value) {
     console.log(event, value);
     this.updateVal.emit({text:value});
+  }
+
+  onCheck(x) {
+
+    this.show = x.target.checked;
+
   }
 
 }
