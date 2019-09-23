@@ -1,10 +1,10 @@
 
 <hr>
 <ul>
-  <li *ngFor = "let order of orderService.orders"> {{order}} </li>
+  <li *ngFor = "let order of orderService.orders"> {{order.text}} </li>
   </ul>
 <hr>
 
 <app-simple-form *ngFor = "let order of orderService.orders" 
-[orderInput]="order" (updateVal)="onUpdate($event)" class="shadow-lg bg-white rounded"> </app-simple-form>
+[orderInput]="order.text" (updateVal)="onUpdate(order.id, $event)" class="shadow-lg bg-white rounded"> </app-simple-form>
 
