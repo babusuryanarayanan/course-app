@@ -8,7 +8,7 @@
     (mousedown) = "isMousedown = true"
     (mouseup) = "isMousedown = false"
     >
-    <button (click)="onClick($event, myInput.value)"> Click Me! </button>
+    <button (click)="onClick($event, myInput.value)" class="btn-primary"> Click Me! </button>
 
 
     <div *ngIf="show else onFalse"> Content to be shown when the condition is true </div>

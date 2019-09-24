@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 
 @Component({
   selector: 'app-simple-form',
   templateUrl: './simple-form.component.html',
-  styleUrls: ['./simple-form.component.scss']
+  styleUrls: ['./simple-form.component.scss'],
+  encapsulation : ViewEncapsulation.Emulated
 })
 export class SimpleFormComponent implements OnInit {
 
@@ -13,6 +14,7 @@ export class SimpleFormComponent implements OnInit {
   @Input() orderInput;
   show:boolean = false;
   cssClasses = {'bold':true,'highlight':true,'strike':false};
+  isMousedown:boolean;
 
   @Output() updateVal = new EventEmitter();
 
