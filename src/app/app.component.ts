@@ -13,8 +13,9 @@ export class AppComponent {
     
   }
 
-  onUpdate(event) {
-    console.log(event);
+  onUpdate(id, event) {
+    console.log(id, event.text);
+    this.orderService.update(id, event.text);
   }
 
 }

@@ -1,0 +1,24 @@
+:host {
+    display:flex;
+}
+
+input:focus {
+    font-weight: bold;
+    outline: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.mousedown {
+    border : 2px solid green;
+}
