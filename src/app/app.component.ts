@@ -8,9 +8,25 @@ import { OrderService } from './services/order.service';
 })
 export class AppComponent {
   title = 'course-app';
+  txtString:string = "test value";
+  showHook:boolean = true;
+
+  user = {
+    firstName : 'John',
+    lastName : 'Mathew'
+  }
 
   constructor(private orderService:OrderService){
     
+  }
+
+  toggleHook(fName, lName) {
+    // this.user.firstName = fName;
+    // this.user.lastName = lName;
+    this.user = {
+      firstName : fName,
+      lastName : lName
+    }
   }
 
   onUpdate(id, event) {

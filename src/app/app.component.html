@@ -12,3 +12,12 @@
 <app-simple-form *ngFor = "let order of orderService.orders" 
 [orderInput]="order.text" (updateVal)="onUpdate(order.id, $event)" class="shadow-lg bg-white rounded"> </app-simple-form>
 
+<input #fName type="text" [value]="user.firstName">
+<input #lName type="text" [value]="user.lastName">
+<button (click)="toggleHook(fName.value, lName.value)"> Click Me! </button>
+<app-lifehook [lifeCycleData]="user" *ngIf='showHook'>
+  <div #ccRef>
+    <p>Will Inject this data through ngContentInit </p>
+  </div>
+</app-lifehook>
+

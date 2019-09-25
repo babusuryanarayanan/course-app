@@ -19,6 +19,7 @@ export class SimpleFormComponent implements OnInit {
   @Output() updateVal = new EventEmitter();
 
   ngOnInit() {
+    
   }
 
   onClick(event, value) {
