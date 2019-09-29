@@ -17,7 +17,8 @@
                                 name="email" ngModel required email #email="ngModel">
                                 <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email </span>
                         </div>
-                </div>
+                        <!-- <p *ngIf="!userData.valid"> User Data is Invalid </p> -->
+                 </div>
                 <div class="form-group">
                         <label for="addresstype"> Address Type </label>
                         <select id="addresstype" class="form-control" name="addresstype" [ngModel]='selectedAddressType'>
@@ -40,7 +41,7 @@
             </form>
         </div>    
     </div>
-    <div class="row">
+<div class="row"> 
         <div class="col-xs-12" *ngIf="submitted">
             <h3> Submitted Data </h3>
             <p> Username: {{user.username}}</p>

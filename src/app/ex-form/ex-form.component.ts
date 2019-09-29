@@ -10,7 +10,7 @@ export class ExFormComponent implements OnInit {
 
   @ViewChild('f',{static:true}) userForm : NgForm;
 
-  selectedAddressType = 'office';
+  selectedAddressType = 'home';
   genders = ['male','female'];
   submitted = false;
   user = {
@@ -32,14 +32,15 @@ export class ExFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
     console.log(this.userForm);
-    this.user.username = this.userForm.form.value.userData.username;
+     this.user.username = this.userForm.form.value.userData.username;
     this.user.email = this.userForm.form.value.userData.email;
     this.user.addresstype = this.userForm.form.value.addresstype;
     this.user.address = this.userForm.form.value.address;
     this.user.gender = this.userForm.form.value.gender;
 
-    this.userForm.reset();
+    // this.userForm.reset();
     
   }
 
