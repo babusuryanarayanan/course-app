@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { OrderService } from './services/order.service';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,10 @@ import { OrderService } from './services/order.service';
 export class AppComponent {
   title = 'course-app';
 
-  constructor(private orderService:OrderService){
+  constructor(){
     
   }
 
-  onUpdate(id, event) {
-    console.log(id, event.text);
-    this.orderService.update(id, event.text);
-  }
+  
 
 }

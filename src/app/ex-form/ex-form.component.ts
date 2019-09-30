@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ex-form',
@@ -21,7 +22,7 @@ export class ExFormComponent implements OnInit {
     gender:''
   }
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
@@ -42,6 +43,10 @@ export class ExFormComponent implements OnInit {
 
     // this.userForm.reset();
     
+  }
+
+  onLoadRoute() {
+    this.router.navigate(['/reactive']);
   }
 
 

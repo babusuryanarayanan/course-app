@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Resolve } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
+
+  hasOrdered = false;
 
   orders = [
     {id:1, text: 'I have an order1'},
@@ -26,5 +29,15 @@ export class OrderService {
         return m;
       }
     })
+  }
+ 
+  isOrderGuarded() {
+
+      return new Promise((resolve, reject)=> {
+        setTimeout(()=> {
+          resolve(this.hasOrdered);
+        },800);
+    });
+    
   }
 }
