@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class OrdersComponent implements OnInit {
 
+  listOfOrders:Object;
   order:any = {};
   paramOrder: boolean = false;
   paramSubscription: Subscription;
@@ -57,6 +58,13 @@ export class OrdersComponent implements OnInit {
     console.log(id, event.text);
     this.orderService.update(id, event.text);
   }
+
+  /* fetchOrders() {
+    this.orderService.getOrders().subscribe((orderData) => {
+      this.listOfOrders = orderData;
+    });
+  } */
+
   ngOnDestroy() {
     this.paramSubscription.unsubscribe();
   }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
@@ -11,6 +12,7 @@ import { ExFormComponent } from './ex-form/ex-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderGuardService } from './services/order-guard.service';
+import { MyhttpinterceptorService } from './services/myhttpinterceptor.service';
 
 const appRoutes : Routes = [
   {path: "", redirectTo: "orders", pathMatch: "full" },
@@ -33,9 +35,12 @@ const appRoutes : Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:MyhttpinterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
