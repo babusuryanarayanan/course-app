@@ -11,7 +11,7 @@ export class MyhttpinterceptorService implements HttpInterceptor {
 
   intercept(request:HttpRequest<any>, next:HttpHandler) : Observable<HttpEvent<any>> {
 
-    console.log('processing request', request);
+    // console.log('processing request', request);
     return next.handle(request);
   }
 

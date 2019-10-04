@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OrderService } from '../services/order.service';
 
 @Component({
   selector: 'app-ex-form',
@@ -22,7 +23,7 @@ export class ExFormComponent implements OnInit {
     gender:''
   }
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private orderService:OrderService) { }
 
   ngOnInit() {
   }
@@ -34,7 +35,7 @@ export class ExFormComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    console.log(this.userForm);
+
      this.user.username = this.userForm.form.value.userData.username;
     this.user.email = this.userForm.form.value.userData.email;
     this.user.addresstype = this.userForm.form.value.addresstype;
@@ -47,6 +48,10 @@ export class ExFormComponent implements OnInit {
 
   onLoadRoute() {
     this.router.navigate(['/reactive']);
+  }
+
+  onActivate() {
+    this.orderService.activateSubject.next(true);
   }
 
 

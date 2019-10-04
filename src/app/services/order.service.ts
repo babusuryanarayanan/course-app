@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class OrderService {
   ];  */
   orders:any = [];
   errorMessage:string = '';
+  activateSubject = new Subject<boolean>();
 
   constructor(private http: HttpClient) { 
     this.getOrders();
@@ -29,7 +31,7 @@ export class OrderService {
     // scenario 1 - get Request. 2 cases - with and without query params
    
      this.http.get('/assets/data/orders.json').subscribe((data) => {
-        console.log(data);
+
         this.orders = data;
     });
     // scenario - 1a - adding request parameters
