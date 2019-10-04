@@ -1,0 +1,37 @@
+<div class="card" style="width: 18rem;">
+        <div class="card-header">
+        Order List
+        </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor = "let order of orderService.orders" >{{order.text}}</li>
+    </ul>
+</div>
+<hr>
+<a [routerLink]="['/orders',2]" 
+   [queryParams] = "{edit:true}"
+   fragment ="editpage"
+  style="background-color: black">
+   Reload Order [2] </a>
+<hr>
+<div *ngIf="!paramOrder else load_order">
+<app-simple-form *ngFor = "let order of orderService.orders" 
+[orderInput]="order.text" (updateVal)="onUpdate(order.id, $event)" class="shadow-lg bg-white rounded"> 
+</app-simple-form>
+</div>
+
+<p> <b>Error:</b>{{orderService.errorMessage}} </p>
+
+
+
+<ng-template #load_order>
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+        Order 
+        </div>
+        <ul class="list-group list-group-flush order-style">
+            <li> {{order.id}} </li>
+            <li> {{order.text}} </li>
+          </ul>
+</div>
+    
+  </ng-template>

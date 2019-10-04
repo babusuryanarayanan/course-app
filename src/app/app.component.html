@@ -1,14 +1,30 @@
-
-  <div class="card" style="width: 18rem;">
-    <div class="card-header">
-      Order List
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" *ngFor = "let order of orderService.orders" >{{order.text}}</li>
-    </ul>
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 tab-style">
+          <ul class="nav">
+              <li class="nav-item" routerLinkActive = "my-active">
+                <a class="nav-link" routerLink="/orders">Orders</a>
+              </li>
+              <li class="nav-item" routerLinkActive = "my-active">
+                <a class="nav-link" routerLink="/template">Template Driven</a>
+              </li>
+              <li class="nav-item" routerLinkActive = "my-active">
+                <a class="nav-link" routerLink="/reactive">Reactive Forms</a>
+              </li>
+            </ul>
+      </div>
   </div>
-<hr>
-
-<app-simple-form *ngFor = "let order of orderService.orders" 
-[orderInput]="order.text" (updateVal)="onUpdate(order.id, $event)" class="shadow-lg bg-white rounded"> </app-simple-form>
-
+  <div class="row"> 
+    <hr />
+  <!--   {{startDate | date:'fullDate' | uppercase}} -->
+  {{startDate | date:'fullDate' | uppercase}}
+    <hr />
+    {{txtString | charpipe}}
+    <p *ngIf="isActivated"> Activated ! </p>
+    <hr />
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8">
+          <router-outlet></router-outlet>
+      </div>
+  </div>
