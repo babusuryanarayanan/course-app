@@ -14,6 +14,15 @@
             </ul>
       </div>
   </div>
+  <div class="row"> 
+    <hr />
+  <!--   {{startDate | date:'fullDate' | uppercase}} -->
+  {{startDate | date:'fullDate' | uppercase}}
+    <hr />
+    {{txtString | charpipe}}
+    <p *ngIf="isActivated"> Activated ! </p>
+    <hr />
+  </div>
   <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8">
           <router-outlet></router-outlet>

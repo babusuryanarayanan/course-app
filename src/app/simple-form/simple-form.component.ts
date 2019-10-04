@@ -22,7 +22,7 @@ export class SimpleFormComponent implements OnInit {
   }
 
   onClick(event, value) {
-    console.log(event, value);
+
     this.updateVal.emit({text:value});
   }
 

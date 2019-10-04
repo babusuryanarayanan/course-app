@@ -23,7 +23,7 @@ export class OrdersComponent implements OnInit {
     // console.log(this.route.snapshot.queryParams);
     // console.log("Fragment>> "+this.route.snapshot.fragment);
     this.route.queryParams.subscribe(qParams=> {
-        console.log(qParams);
+        // console.log(qParams);
     })
     
     this.paramSubscription = this.route.params.subscribe((params:Params) => {
@@ -55,7 +55,7 @@ export class OrdersComponent implements OnInit {
 
 
   onUpdate(id, event) {
-    console.log(id, event.text);
+    // console.log(id, event.text);
     this.orderService.update(id, event.text);
   }
 
