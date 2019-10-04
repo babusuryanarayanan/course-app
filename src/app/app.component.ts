@@ -26,7 +26,7 @@ export class AppComponent {
   ngOnInit() {
 
     // scenario - at every 1 sec an emit will be emitted.
-    /* this.intSubscription = interval(1000).subscribe((data)=> {
+     /* this.intSubscription = interval(1000).subscribe((data)=> {
       console.log(data);
     }); */
     // scenario - 2, creating our own observables
@@ -34,25 +34,27 @@ export class AppComponent {
       let count = 0;
       setInterval(() => {
         observer.next(count);
-        if(count=== 2) {
+         if(count=== 2) {
           observer.complete();
         }
-        if(count > 3) {
+       if(count > 3) {
           observer.error(new Error('Count is greater than 3'));
         }
         count++;
       },1000);
-    }); */
+    });  */
 
     //operators
     /* customObservable.pipe(map((data)=> {
       return 'Round :' + (data);
     })); */
 
-    /* this.intSubscription = customObservable.subscribe((data)=> {
+    /* this.intSubscription = customObservable.pipe(map((data)=> {
+      return 'Round :' + (data);
+    })).subscribe((data)=> {
       console.log(data);
     },(error)=> {
-      console.log(error);
+      console.log("Error"+ error);
     },()=> {
       console.log("completed");
     }); */

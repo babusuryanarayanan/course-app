@@ -14,7 +14,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
           'background-color' : 'red',
           'height' : '50px'
         })),// transition('* => *',animate(500))
-        transition('move=> *',animate(2000, keyframes([
+      transition('stop=> *',animate(2000, keyframes([
           style({'transform':'scale(0)'}),
           style({'transform':'scale(0.4)'}),
           style({'transform':'scale(0.6)'}),

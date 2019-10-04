@@ -16,7 +16,8 @@
   </div>
   <div class="row"> 
     <hr />
-    {{startDate | date:'fullDate' | uppercase}}
+  <!--   {{startDate | date:'fullDate' | uppercase}} -->
+  {{startDate | date:'fullDate' | uppercase}}
     <hr />
     {{txtString | charpipe}}
     <p *ngIf="isActivated"> Activated ! </p>

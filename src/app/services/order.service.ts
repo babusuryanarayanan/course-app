@@ -35,14 +35,18 @@ export class OrderService {
         this.orders = data;
     });
     // scenario - 1a - adding request parameters
-    /* const params = new HttpParams()
+   /*  const params = new HttpParams()
     .set('id','1234')
     .set('text','My search text');
-     this.http.get('/assets/data/orders.json', {
+     this.http.get('/assets/data/orders.json', { // Observables 
        params : params
-     }).subscribe((data) => {
+     }).subscribe((data) => { // Observer 
         console.log(data);
         this.orders = data;
+    }, (error)=> {
+      console.log(error);
+    },() => {
+      console.log()
     }); */
 
     // scenario 2 - post request

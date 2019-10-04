@@ -14,10 +14,10 @@ export class MiscService {
 
   ]; 
   constructor() { 
-    // this.getProduct_for();
+    //  this.getProduct_for();
     // this.getProduct_each();
-    // this.getProduct_map();
-    // this.getProduct_filter();
+    //this.getProduct_map();
+     //this.getProduct_filter();
     this.getProduct_reducer();
   }
   
@@ -37,6 +37,7 @@ export class MiscService {
     });
     console.log(products);
   }
+  // map creates a new array from the results
   getProduct_map() {
     
     let products = this.orders.map((order) => {
@@ -45,6 +46,7 @@ export class MiscService {
     console.log(products);
   }
 
+  // only want some of the elements from the array
   getProduct_filter() {
     let products = this.orders.map((order) => {
       return order.product;
@@ -56,12 +58,20 @@ export class MiscService {
     console.log(products);
   }
 
+  // reduce pass the result of callback from one element to the next element
   getProduct_reducer() {
     let totalPrices = this.orders.reduce((prev, curr)=> {
           return prev+curr.price;
     },0);
     console.log(totalPrices);
   }
+
+  // fn prev = 0, curr = 100
+  // prev = 100, curr = 200
+  // prev = 300, curr = 300
+  // prev = 600, curr = 400
+  // prev = 1000 , curr = 500
+  // output = 1500.
 
 
 }
